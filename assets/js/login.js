@@ -28,7 +28,7 @@ $(function () {
         e.preventDefault();
         $.ajax({
             type: 'POST',
-            url: 'http://www.liulongbin.top:3007/api/reguser',
+            url: '/api/reguser',
             data: $(this).serialize(),
             success: function (res) {
                 if (res.status !== 0) {
@@ -46,7 +46,7 @@ $(function () {
         e.preventDefault();
         $.ajax({
             type: 'POST',
-            url: 'http://www.liulongbin.top:3007/api/login',
+            url: '/api/login',
             data: $(this).serialize(),
             success: function (res) {
                 if (res.status !== 0) {
