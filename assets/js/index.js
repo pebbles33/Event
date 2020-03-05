@@ -1,6 +1,6 @@
 $(function () {
 
-    getUserInpo();
+    getUserInfo();
     //退出事件绑定
     $('#btnExit').on('click', function () {
         layer.confirm('确认退出登录吗?', { icon: 3, title: '提示' }, function (index) {
@@ -12,7 +12,7 @@ $(function () {
     })
 })
 //发送请求来获取用户信息
-function getUserInpo() {
+function getUserInfo() {
     $.ajax({
         type: 'GET',
         url: '/my/userinfo',
@@ -39,7 +39,7 @@ function renderAvatar(user) {
     $('#welcome').html('欢迎&nbsp;&nbsp;' + name);
     //图片头像
     if (user.user_pic) {
-        $('.layui-nav-img').attr('src', user_pic).show()
+        $('.layui-nav-img').attr('src', user.user_pic).show()
         $('.text-avatar').hide()
     }
     //文本头像
